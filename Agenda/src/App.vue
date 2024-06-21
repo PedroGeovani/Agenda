@@ -7,7 +7,7 @@ export default{
   name : "App",
   data(){
     return{
-      title : "Calculadora: Projeto iniciado"
+      title : "Agenda: Projeto iniciado"
     }
   },//data
   components : {

@@ -6,9 +6,7 @@
 </template>
 
 <script lang="ts">
-import Vue from 'vue'
 import ButtonUserAdd from './buttons/ButtonUserAdd.vue'
-import { text } from 'stream/consumers';
 
 export default {
     name : "Page",
