@@ -1,5 +1,8 @@
 <template>
-    <button> {{str}} </button>
+<ul>
+    <button class="button_style"> {{textButton}} </button>
+</ul>
+
 </template>
 
 <script lang="ts">
@@ -7,8 +10,20 @@
         name : "button",
         data(){
             return{
-                str : "Edite aqui o botão"
+                textButton : "Adicionar Usuário",
             }
         }
     }
 </script>
+
+<style scoped>
+
+.button_style{
+    background: rgb(223, 250, 255);
+    width: 300px;
+    height: 40px;
+    border-radius: 10px;
+    type
+}
+
+</style>
