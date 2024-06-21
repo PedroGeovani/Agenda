@@ -1,15 +1,14 @@
-<template lang="ts">
-   <p> {{textButton}} </p>
+<template>
+    <button> {{str}} </button>
 </template>
 
-<script>
-
-export default {
-    name : 'ButtonUserAdd',
-    data(){
-        return{
-            textButton : "Este é um botão",
+<script lang="ts">
+    export default{
+        name : "button",
+        data(){
+            return{
+                str : "Edite aqui o botão"
+            }
         }
-    }//data
-}
+    }
 </script>

@@ -1,5 +1,8 @@
 <script lang="ts">
 
+import ButtonUserAdd from './components/buttons/ButtonUserAdd.vue'
+import LayoutPage from './components/LayoutPage.vue'
+
 export default{
   name : "App",
   data(){
@@ -7,6 +10,10 @@ export default{
       title : "Calculadora: Projeto iniciado"
     }
   },//data
+  components : {
+    ButtonUserAdd,
+    LayoutPage,
+  }//components
 
 }
 </script>
@@ -14,6 +21,8 @@ export default{
 <template> 
 
   <h1> {{title}} </h1>
+  <LayoutPage/>
+  <ButtonUserAdd/>
   
 </template>
 
