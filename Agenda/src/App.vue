@@ -11,14 +11,9 @@ export default{
 </script>
 
 <template> 
-  <div class="backgroundpage">
+  <div>
     <LayoutPage/>
   </div>
   
 </template>
 
-<style scoped>
-.backgroundpage{
-  background-image: url(./components/image/ImageBackground.jpg);
-}
-</style>

@@ -8,6 +8,8 @@ export default {
         return{  
             title: "Agenda",
             subtitle : "Contatos",
+            buttonadd : "Adicionar Contato",
+            tag : "Detalhes",
             text : [
             "nome de usuario 1",
             "nome de usuario 2",
@@ -32,56 +34,57 @@ export default {
 }
 </script>
 
-<template >  
-
-    <div class = "pagestyle">
-        <div> 
-            <div class="header_background">             
-                <h1>  {{ title }} </h1>              
-            </div> 
-
-            <div class="background_itens"> 
-
-                <h2> {{ subtitle }} </h2>
-
-                <p> <UserName v-for="item in text" :key ="item" :username="item"/> </p> 
-                
-                <ButtonUserAdd class="button"/>      
-
-            </div>
-
-        </div>
-    </div>
+<template >
+    <div class = "pagestyle"> 
         
+        <div class="header"> {{ title }} </div>  
+        
+        <div class="collumn"> 
+            <div class="subtitle_text"> {{ subtitle }} </div> 
+            <div class="item"> <ButtonUserAdd :textButton="buttonadd"/> </div>
+        </div>
+
+        <div class="box_data" >  
+            <UserName v-for="item in text" :key ="item" :username="item" :tagbutton="tag"/>        
+        </div>  
     
+    </div>
+            
 </template>
 
 <style scoped>
-
 .pagestyle{
-    background: rgb(190, 253, 255);
-    background-size: cover;
+    background: rgb(220, 230, 255); 
 }
 
-.header_background{
-    background: rgb(118, 0, 228);    
-    width: 60;
-}
-
-h1{
-    padding: 20px;
+.header{     
+    background:rgb(90, 90, 255);
+    height: 50px;
+    font-size: 48px;
     color: white;
+    padding-top: 20px;
+    padding-bottom: 40px;
+    padding-left: 40px;
+    border-bottom-left-radius: 20px; 
+    margin-bottom: 10px;
 }
 
-
-h2{
-    padding: 30px;
-    color: rgb(118, 0, 228);
+.box_data{
+ background: white;
+ width: 840px;
+ padding: 20px;
+ margin-left: 30px;
+ border-radius: 15px;
 }
 
-h3{
-    padding: 30px;
-    color: rgb(118, 0, 228);
+.item{
+    margin-left: 130px;
+}
+
+.subtitle_text{    
+    font-size: 28px;  
+    font-weight: 600;  
+    color: rgb(90, 90, 255);
 }
 
 .background_itens{
@@ -90,15 +93,13 @@ h3{
     margin-left: 20px;
     border-color: rgb(0, 4, 245);
     border-radius: 15px;
-    width: 70%;
 }
 
-
-.button{
-    align-items: top;
-    flex-direction: column;
+.collumn{ 
+    margin-left: 40px;
+    columns: 2; 
+    margin-bottom: 10px;
+    width: 870px; 
 }
-
-
 
 </style>
