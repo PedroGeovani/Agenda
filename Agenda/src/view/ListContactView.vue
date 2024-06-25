@@ -36,14 +36,18 @@ export default {
 <template >
     <div> 
         <div class="collumn"> 
+            
             <div class="subtitle_text"> {{ subtitle }} </div> 
             <div class="item"> <ButtonUserAdd :textButton="buttonadd"/> </div>
+            
         </div>
 
         <div class="box_data" >  
             <UserName v-for="item in text" :key ="item" :username="item" :tagbutton="tag"/>        
-        </div>
+        </div> 
+
     </div>
+   
             
 </template>
 
