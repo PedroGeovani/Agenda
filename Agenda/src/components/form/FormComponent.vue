@@ -3,11 +3,11 @@
     <form @submit.prevent="actionButtonSend">
       <div class="form-group">
         <label for="name">Nome completo: </label>
-        <input id="name" type="text" v-model="name" :placeholder="namePlaceholder" /><br>
+        <input id="name" type="text" v-model="name" :placeholder="namePlaceholder" />
       </div>
       <div class="form-group">
         <label for="address">Endereço: </label>
-        <input id="address" type="text" v-model="address" :placeholder="addressPlaceholder" /><br>
+        <input id="address" type="text" v-model="address" :placeholder="addressPlaceholder" />
       </div>
       <div class="form-group">
         <label for="city">Cidade: </label>
@@ -15,11 +15,11 @@
       </div>
       <div class="form-group">
         <label for="phone">Telefone: </label>
-        <input id="phone" type="text" v-model="phone" :placeholder="phonePlaceholder" /><br>
+        <input id="phone" type="text" v-model="phone" :placeholder="phonePlaceholder" />
       </div>
       <div class="form-group">
         <label for="email">E-mail: </label>
-        <input id="email" type="text" v-model="email" :placeholder="emailPlaceholder" /><br>
+        <input id="email" type="text" v-model="email" :placeholder="emailPlaceholder" />
       </div>
       <button type="submit" class="btn">{{ buttonSend }}</button>
     </form>
@@ -54,6 +54,7 @@ export default {
       default: 'Salvar',
     }
   },
+  emits:['onSendValues'],
   data() {
     return {
       name: '',
@@ -65,7 +66,7 @@ export default {
   },
   methods: {
     actionButtonSend() {
-      console.log(this.name, this.address, this.city, this.phone, this.email);
+      this.$emit('onSendValues',this.name, this.address, this.city, this.phone, this.email);
     },
   }
 };

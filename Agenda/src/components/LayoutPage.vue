@@ -34,6 +34,11 @@ export default {
         UserName,
         FormComponent,
     },//componets
+    methods: {
+        valuesThisForm(name: String, address: String, city: String, phone: String, email: String) {
+            console.log(name, address, city, phone, email);
+        }
+    }
 }
 </script>
 
@@ -55,7 +60,7 @@ export default {
 
         <div class="box_data">
             <div class="fomulario">
-                <FormComponent :namePlaceholder="nome" />
+                <FormComponent :namePlaceholder="nome" @on-send-values="valuesThisForm" />
             </div>
         </div>
 
@@ -67,7 +72,7 @@ export default {
 <style scoped>
 .pagestyle {
     background: rgb(220, 230, 255);
-}   
+}
 
 .header {
     background: rgb(90, 90, 255);
