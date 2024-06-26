@@ -1,50 +1,66 @@
 <script lang="ts">
+import ButtonDetails from '../components/button-details/ButtonDetails.vue';
 import ButtonUserAdd from '../components/buttons/ButtonUserAdd.vue'
 import UserName from '../components/user-name/UserName.vue'
+import api from '../services/api'
+
 
 export default {
     name : "Page",
     data() {
         return{ 
-            subtitle : "Contatos",
-            buttonadd : "Adicionar Contato",
+            addUser : "Adicionar Contato",
             tag : "Detalhes",
-            text : [
-            "nome de usuario 1",
-            "nome de usuario 2",
-            "nome de usuario 3", 
-            "nome de usuario 4", 
-            "nome de usuario 5", 
-            "nome de usuario 6", 
-            "nome de usuario 7",
-            "nome de usuario 8",
-            "nome de usuario 9",
-            "nome de usuario 10", 
-            "nome de usuario 11", 
-            "nome de usuario 12", 
-            "nome de usuario 13", 
-            "nome de usuario 14"],
+            listUser : ref(),
         }
     },//data
     components :{
         ButtonUserAdd,
+        ButtonDetails,
         UserName,
+        api
     },//componets
+    
+    mounted(){        
+        //api
+        //.get('name')
+        //.then(response => (this.listUser.values = response))       
+
+        //api.get('/users')
+        //    .then((response) {
+            // manipula o sucesso da requisição
+        //    this.listUser = response;
+        //})
+
+        api({
+            method: "get",
+            url: "/users",
+            responseType: "text",
+        }).then(function (response) {
+            response.data.pipe(listUser = response);
+        });
+
+    }
 }
 </script>
 
 <template >
     <div> 
-        <div class="collumn"> 
-            
-            <div class="subtitle_text"> {{ subtitle }} </div> 
-            <div class="item"> <ButtonUserAdd :textButton="buttonadd"/> </div>
-            
-        </div>
+        <div v-for="item in listUser" :key="item"> 
+            {{ item }}
+        </div> 
+        <!-- 
+        <div class="collumn">             
+            <div class="subtitle_text"> Contatos </div> 
+            <div class="item"> <ButtonUserAdd :tag_button="addUser"/> </div>            
+        </div>    
 
         <div class="box_data" >  
-            <UserName v-for="item in text" :key ="item" :username="item" :tagbutton="tag"/>        
-        </div> 
+            <div v-for="(nameUser,index) in listUser" :key="index">
+                <UserName :key ="index" :username="nameUser"/>
+                <ButtonDetails key="index"/>               
+            </div>
+        </div> -->
 
     </div>
    
@@ -83,7 +99,7 @@ export default {
     margin-left: 40px;
     columns: 2; 
     margin-bottom: 10px;
-    width: 870px; 
+    width: 500px; 
 }
 
 </style>

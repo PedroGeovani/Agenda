@@ -1,16 +1,17 @@
 <template>
     <div>
-        <button class="button_style"> {{textButton}} </button>
+        <button class="button_style"> {{ tag_button }} </button>
     </div>
 </template>
 
 <script lang="ts">
     export default{
-        name : "button",      
-        props : {
-            textButton : String
+        name : "button",
+        props :{
+            tag_button : String
         }
     }
+    
 </script>
 
 <style scoped>

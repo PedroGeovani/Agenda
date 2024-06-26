@@ -1,6 +1,9 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import DetailContactView from '../view/DetailContactView.vue'
 import ListContactView from '../view/ListContactView.vue' 
+import AddContactView from '../view/AddContactView.vue'
+import EditContactView from '../view/EditContactView.vue'
+
 
 
 const router = createRouter({
@@ -15,6 +18,16 @@ const router = createRouter({
       path: '/detail',
       name: 'Detail',
       component: DetailContactView
+    },
+    {
+      path: '/addContact',
+      name: 'AddContact',
+      component: AddContactView
+    },
+    {
+      path: '/editContact',
+      name: 'EditContact',
+      component: EditContactView
     }
   ]
 })

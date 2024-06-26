@@ -1,15 +1,15 @@
 <template>
-<ul>
-    <button class="button_style"> {{textButton}} </button>
-</ul>
+<a>
+    <button class="button_style"> Detalhes </button>
+</a>
 </template>
 
 <script lang="ts">
     export default{
         name : "button",      
         props : {
-            textButton : String
-        }
+            id : Number
+        },
     }
 </script>
 
