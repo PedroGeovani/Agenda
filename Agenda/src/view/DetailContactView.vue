@@ -13,7 +13,18 @@ export default {
             subtitle : "Detalhe do Contato",
             buttonadd : "Salvar Alterações",
             tag : "Editar",
+<<<<<<< HEAD
             listUser : [] as User[],
+=======
+            listData : [
+            "Nome: ",
+            "Endereço: ",
+            "Bairro: ", 
+            "Cidade: ", 
+            "Estado: ", 
+            "Celular: ", 
+            "WhatsApp: "],
+>>>>>>> 76f7e8e (updateproject)
         }
     },//data
     components :{
@@ -33,12 +44,18 @@ export default {
 </script>
 
 <template >
+<<<<<<< HEAD
     <div> 
         <!-- Header e button -->
         <div> 
             <a class="subtitle">Detalhar</a>            
                 <router-link class="routelink" :to="{name:'Contact'}"> Contatos </router-link>
                 <router-link class="routelink" :to="{name:'EditContact'}"> Editar </router-link>
+=======
+    <div>
+        <div class="collumn"> 
+            <div class="subtitle"> Detalhes do contato </div>
+>>>>>>> 76f7e8e (updateproject)
         </div>
 
         <!-- field e data -->
