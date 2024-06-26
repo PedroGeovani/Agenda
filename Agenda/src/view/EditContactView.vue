@@ -37,8 +37,7 @@ export default {
         <div class="boxdata" >  
             <UserName v-for="item in text" :key ="item" :username="item" :tagbutton="tag"/>        
         </div>
-    </div>
-            
+    </div>             
 </template>
 
 <style scoped>

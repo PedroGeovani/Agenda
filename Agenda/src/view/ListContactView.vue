@@ -19,7 +19,8 @@ export default {
     components :{
         ButtonUserAdd,
         ButtonDetails,
-        UserName,      
+        UserName,
+        api
     },//componets
     mounted () { 
         api
@@ -39,12 +40,10 @@ export default {
         <div class="boxdata" >  
             <div v-for="(nameUser,index) in listUser" :key="index">
                 <UserName :key ="index" :username="nameUser.name"/>
-                <router-link class="addcontact" :to="{path:'detail/?:id'}" :id="index"> Detalhes </router-link>             
+                <router-link class="addcontact" :to="{name: 'Detail', params: {id: index}}" :id="index"> Detalhes </router-link>             
             </div>
         </div>         
     </div>
-   
-            
 </template>
 
 <style scoped>
@@ -90,5 +89,9 @@ export default {
     color: rgb(255, 255, 255);
     text-decoration: none;
 }
-
+.subtitle{    
+    font-size: 28px;  
+    font-weight: 600;  
+    color: rgb(90, 90, 255);
+}
 </style>

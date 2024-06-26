@@ -45,8 +45,7 @@ export default {
         <div class="boxdata" >
             <UserNameDetail :username="listUser[Number('/id')]" :tagbutton="tag"/>        
         </div>
-    </div>
-            
+    </div> 
 </template>
 
 <style scoped>
