@@ -10,18 +10,19 @@ export default{
 </script>
 
 <template>                     
-    <a class="text"> {{ username }} </a>      
+    <div class="text"> {{ username }} </div>      
 </template>
 
 <style scoped>
-.text{    
+.text{
+    display: inline-block;
     background: rgb(220, 230, 255);   
     font-size: 16px;
     color: rgb(0, 0, 0);
     padding-left: 16px;
     border-radius: 5px;
     border: solid;
-    width: 500px;
+    width: 60%;
     border-color: rgb(140, 170, 255);
 
 }

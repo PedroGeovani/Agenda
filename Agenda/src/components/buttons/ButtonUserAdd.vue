@@ -1,6 +1,6 @@
 <template>
     <div>
-        <button class="button_style"> {{ tag_button }} </button>
+        <button class="button_style" @click="$router.push({name: next})"> {{ tag_button }} </button>        
     </div>
 </template>
 
@@ -8,10 +8,10 @@
     export default{
         name : "button",
         props :{
-            tag_button : String
-        }
-    }
-    
+            tag_button : String,
+            next : String
+        }, 
+    }   
 </script>
 
 <style scoped>

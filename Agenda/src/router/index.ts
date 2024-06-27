@@ -13,7 +13,7 @@ const router = createRouter({
       path: '/',
       name: 'Contact',
       component: ListContactView
-    },
+    },    
     {
       path: '/detail',
       name: 'Detail',

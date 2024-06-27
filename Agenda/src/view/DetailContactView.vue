@@ -22,20 +22,21 @@ export default {
     components :{
         ButtonUserAdd,
         UserName,
-    },//componets
+    },//componets   
 }
 </script>
 
 <template >
     <div> 
         <!-- Header e button -->
-        <div class="collumn"> 
-            <div class="subtitle_text"> {{ subtitle }} </div> 
-            <div class="item"> <ButtonUserAdd :textButton="buttonadd"/> </div>
+        <div> 
+            <a class="subtitle">Detalhar</a>            
+                <router-link class="routelink" :to="{name:'Contact'}"> Contatos </router-link>
+                <router-link class="routelink" :to="{name:'EditContact'}"> Editar </router-link>
         </div>
 
         <!-- field e data -->
-        <div class="box_data" >  
+        <div class="boxdata" >  
             <UserName v-for="item in text" :key ="item" :username="item" :tagbutton="tag"/>        
         </div>
     </div>
@@ -44,7 +45,7 @@ export default {
 
 <style scoped>
 
-.box_data{
+.boxdata{
  background: white;
  width: 840px;
  padding: 20px;
@@ -52,26 +53,25 @@ export default {
  border-radius: 15px;
 }
 
-.item{
-    margin-left: 130px;
-}
-
-.subtitle_text{    
-    font-size: 28px;  
+.subtitle{  
+    margin-left: 30px;  
+    font-size: 24px;  
     font-weight: 600;  
     color: rgb(90, 90, 255);
 }
-
-.background_itens{
-    background: rgb(255, 255, 255);
-    border: 3px;
-    margin-left: 20px;
-    border-color: rgb(0, 4, 245);
-    border-radius: 15px;
+.routelink{ 
+    display: inline-block;
+    background: rgb(90, 90, 255);
+    margin-left: 50px;
+    margin-bottom: 10px;
+    padding: 5px 30px;
+    border-radius: 30px;
+    font-size: 24px;  
+    font-weight: 600;  
+    color: rgb(255, 255, 255);
+    text-decoration: none;
 }
-
 .collumn{ 
-    margin-left: 40px;
     columns: 2; 
     margin-bottom: 10px;
     width: 870px; 
