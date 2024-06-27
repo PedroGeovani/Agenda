@@ -5,6 +5,9 @@ import LayoutPage from './components/LayoutPage.vue'
 
 export default{
   name : "App",
+  components : { 
+    LayoutPage,
+  }//components
   data(){
     return{
       title : "Agenda: Projeto iniciado"
@@ -19,6 +22,11 @@ export default{
 </script>
 
 <template> 
+  <div>
+    <LayoutPage/>
+  </div>
+  
+</template>
 
   <h1> {{title}} </h1>
   <LayoutPage/>
