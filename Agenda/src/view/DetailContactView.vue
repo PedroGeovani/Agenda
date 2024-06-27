@@ -33,18 +33,12 @@ export default {
 </script>
 
 <template >
-<<<<<<< HEAD
     <div> 
         <!-- Header e button -->
         <div> 
             <a class="subtitle">Detalhar</a>            
                 <router-link class="routelink" :to="{name:'Contact'}"> Contatos </router-link>
                 <router-link class="routelink" :to="{name:'EditContact'}"> Editar </router-link>
-=======
-    <div>
-        <div class="collumn"> 
-            <div class="subtitle"> Detalhes do contato </div>
->>>>>>> 76f7e8e (updateproject)
         </div>
 
         <!-- field e data -->

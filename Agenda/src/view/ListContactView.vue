@@ -32,6 +32,7 @@ export default {
 </script>
 
 <template >
+   
     <div>
         <div>             
             <a class="subtitle"> Contatos </a>
@@ -45,6 +46,7 @@ export default {
             </div>
         </div>         
     </div>
+    
 </template>
 
 <style scoped>

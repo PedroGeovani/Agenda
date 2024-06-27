@@ -8,17 +8,19 @@ export default{
       home : 'Contact'
     }  
   },
+  mounted(){
+
+  }
 }
 </script>
 
 <template>
-
   <div class="pagestyle">
-    <div> <router-link class="header" to="/"> Agenda </router-link> </div>  
-    
-    <router-view/>
-    
+      <div> <router-link class="header" to="/"> Agenda </router-link> </div>   
+      <div> <router-link :to="{path : '/'}"> </router-link> </div>   
+      <router-view/>    
   </div>
+  
 
 </template>
 
