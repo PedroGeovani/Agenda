@@ -2,6 +2,7 @@
     <div>
         <button class="button_style"> {{textButton}} </button>
     </div>
+    <button> {{str}} </button>
 </template>
 
 <script lang="ts">
@@ -26,3 +27,11 @@
 }
 
 </style>
+        name : "button",
+        data(){
+            return{
+                str : "Edite aqui o botão"
+            }
+        }
+    }
+</script>
