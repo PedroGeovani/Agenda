@@ -1,15 +1,23 @@
 <script lang="ts">
+
 export default{
-  name : 'App'
+  name : 'App',
+  data() {
+    return {
+      title : 'Agenda',
+      home : 'Contact'
+    }  
+  },
 }
 </script>
 
-<template> 
+<template>
+
   <div class="pagestyle">
-  <router-link class="header" :to="{name :'Contact'}">Agenda</router-link> 
-  
-  <router-view/>
-  
+    <div> <router-link class="header" to="/"> Agenda </router-link> </div>  
+    
+    <router-view/>
+    
   </div>
 
 </template>

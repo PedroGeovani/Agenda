@@ -1,9 +1,9 @@
 <script lang="ts">
-import axios from 'axios';
 import ButtonDetails from '../components/button-details/ButtonDetails.vue';
 import ButtonUserAdd from '../components/buttons/ButtonUserAdd.vue'
 import UserName from '../components/user-name/UserName.vue'
 import { type User } from '../services/type'
+import api from '../services/api';
 
 
 export default {
@@ -22,8 +22,8 @@ export default {
         UserName,      
     },//componets
     mounted () { 
-        axios
-        .get('https://6679b7a718a459f639512c41.mockapi.io/agenda/v1/users')
+        api
+        .get('/users')
         .then(response => (this.listUser = response.data))
         }      
     }
@@ -39,7 +39,7 @@ export default {
         <div class="boxdata" >  
             <div v-for="(nameUser,index) in listUser" :key="index">
                 <UserName :key ="index" :username="nameUser.name"/>
-                <router-link class="addcontact" :to="{name : 'Detail'}"> Detalhes </router-link>             
+                <router-link class="addcontact" :to="{path:'detail/?:id'}" :id="index"> Detalhes </router-link>             
             </div>
         </div>         
     </div>

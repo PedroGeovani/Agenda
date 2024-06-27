@@ -1,6 +1,10 @@
 <script lang="ts">
+import api from '../services/api'
 import ButtonUserAdd from '../components/buttons/ButtonUserAdd.vue'
 import UserName from '../components/user-name/UserName.vue'
+import type { User } from '../services/type'
+import UserNameDetail from '../components/user-name/UserNameDetail.vue';
+import { routerKey, RouterLink } from 'vue-router';
 
 export default {
     name : "Page",
@@ -9,20 +13,22 @@ export default {
             subtitle : "Detalhe do Contato",
             buttonadd : "Salvar Alterações",
             tag : "Editar",
-            text : [
-            "Nome: ",
-            "Endereço: ",
-            "Bairro: ", 
-            "Cidade: ", 
-            "Estado: ", 
-            "Celular: ", 
-            "WhatsApp: "],
+            listUser : [] as User[],
         }
     },//data
     components :{
+        UserNameDetail,
         ButtonUserAdd,
         UserName,
-    },//componets   
+    },//componets 
+    props:{
+        index : Number    
+    },
+    mounted () { 
+        api
+        .get('/users')
+        .then(response => (this.listUser = response.data))              
+        },//mounted 
 }
 </script>
 
@@ -36,8 +42,8 @@ export default {
         </div>
 
         <!-- field e data -->
-        <div class="boxdata" >  
-            <UserName v-for="item in text" :key ="item" :username="item" :tagbutton="tag"/>        
+        <div class="boxdata" >
+            <UserNameDetail :username="listUser[Number('/id')]" :tagbutton="tag"/>        
         </div>
     </div>
             

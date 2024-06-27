@@ -2,18 +2,18 @@
 export default{
     name: "user_name",    
     props : {
-        username : String  
+        username : [],
     },
 }
 </script>
 
 <template>                     
-    <div class="text" > {{ username }} </div>      
+    <div class="text" v-for="(data, index) in username " :key="index"> {{ data }} </div>      
 </template>
 
 <style scoped>
 .text{
-    display: inline-block;
+    margin: 10px 0px;
     background: rgb(220, 230, 255);   
     font-size: 16px;
     color: rgb(0, 0, 0);
