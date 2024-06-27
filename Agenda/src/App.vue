@@ -11,7 +11,6 @@ export default{
 }
 </script>
 
-<<<<<<< HEAD
 <template>
 
   <div class="pagestyle">
@@ -21,20 +20,6 @@ export default{
     
   </div>
 
-=======
-<template> 
-<div class = "pagestyle">
-  <Header/>
- 
-  <router-link to="./"/>
-  <router-link :to="{ name:'Contact'}"> Contatos </router-link>|
-  <router-link :to="{ name:'AddContact'}"> Adicionar </router-link>|
-  <router-link :to="{ name:'Detail'}"> Detalhes </router-link>|
-  <router-link :to="{ name:'EditContact'}"> Editar </router-link>  
-  <router-view/>
- 
-</div>
->>>>>>> 76f7e8e (updateproject)
 </template>
 
 <style scoped>

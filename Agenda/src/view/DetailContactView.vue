@@ -13,18 +13,7 @@ export default {
             subtitle : "Detalhe do Contato",
             buttonadd : "Salvar Alterações",
             tag : "Editar",
-<<<<<<< HEAD
             listUser : [] as User[],
-=======
-            listData : [
-            "Nome: ",
-            "Endereço: ",
-            "Bairro: ", 
-            "Cidade: ", 
-            "Estado: ", 
-            "Celular: ", 
-            "WhatsApp: "],
->>>>>>> 76f7e8e (updateproject)
         }
     },//data
     components :{
