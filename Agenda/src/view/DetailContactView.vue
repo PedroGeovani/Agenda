@@ -1,33 +1,26 @@
 <script lang="ts">
 import api from '../services/api'
-import ButtonUserAdd from '../components/buttons/ButtonUserAdd.vue'
-import UserName from '../components/user-name/UserName.vue'
-import type { User } from '../services/type'
-import UserNameDetail from '../components/user-name/UserNameDetail.vue';
-import { routerKey, RouterLink } from 'vue-router';
+import { type User } from '../services/type'
 
 export default {
     name : "Page",
     data() {
         return{
-            subtitle : "Detalhe do Contato",
-            buttonadd : "Salvar Alterações",
-            tag : "Editar",
-            listUser : [] as User[],
+            user : {} as User
         }
-    },//data
-    components :{
-        UserNameDetail,
-        ButtonUserAdd,
-        UserName,
-    },//componets 
-    props:{
-        index : Number    
-    },
+    },//data methods: {
+    methods:{
+        deleteUser(index: String){
+            api
+            .delete('/users/'+index)
+            .then( () => console.log("Deletado com sucesso!",
+            )
+        )} 
+    },   
     mounted () { 
         api
-        .get('/users')
-        .then(response => (this.listUser = response.data))              
+        .get('/users/'+this.$route.params.id)
+        .then(response => (this.user = response.data))         
         },//mounted 
 }
 </script>
@@ -39,12 +32,18 @@ export default {
             <a class="subtitle">Detalhar</a>            
                 <router-link class="routelink" :to="{name:'Contact'}"> Contatos </router-link>
                 <router-link class="routelink" :to="{name:'EditContact'}"> Editar </router-link>
+                <router-link class="routelink" :to="{name:'Contanct'}" :v-bind="deleteUser(user.id)"> Apagar </router-link>
+               
+           
         </div>
-
         <!-- field e data -->
         <div class="boxdata" >
-            <UserNameDetail :username="listUser[Number('/id')]" :tagbutton="tag"/>        
-        </div>
+        <div>Name:     {{ user.name }} </div>     
+        <div>Endereço: {{ user.address }} </div>  
+        <div>Cidade:   {{ user.city }} </div> 
+        <div>Fone:     {{ user.phone }} </div> 
+        <div>Email:    {{ user.e_mail }} </div> 
+        </div>       
     </div> 
 </template>
 

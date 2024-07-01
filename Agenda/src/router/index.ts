@@ -5,35 +5,13 @@ import AddContactView from '../view/AddContactView.vue'
 import EditContactView from '../view/EditContactView.vue'
 
 
-
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
-    {
-      path: '/',
-      name: 'Contact',
-      component: ListContactView
-    },    
-    {
-      path: '/detail',
-      name: 'Detail',
-      component: DetailContactView
-    },
-    {
-      path: '/detail?:id',
-      name: 'Detail',
-      component: DetailContactView
-    },
-    {
-      path: '/addContact',
-      name: 'AddContact',
-      component: AddContactView
-    },
-    {
-      path: '/editContact',
-      name: 'EditContact',
-      component: EditContactView
-    }
+    {path: '/', name: 'Contact', component: ListContactView}, 
+    {path: '/detail/:id', name: 'Detail', component: DetailContactView },
+    {path: '/addContact', name: 'AddContact', component: AddContactView},
+    {path: '/editContact', name: 'EditContact', component: EditContactView}
   ]
 })
 

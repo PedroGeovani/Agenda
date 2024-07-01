@@ -7,7 +7,8 @@ export default {
     data() {
         return{
             subtitle : "Detalhe do Contato",
-            buttonadd : "Salvar Alterações",            
+            buttonadd : "Salvar Alterações",   
+            tag : 'es'   ,      
             text : [
             "Nome: ",
             "Endereço: ",
@@ -22,6 +23,7 @@ export default {
         ButtonUserAdd,
         UserName,
     },//componets
+    
 }
 </script>
 

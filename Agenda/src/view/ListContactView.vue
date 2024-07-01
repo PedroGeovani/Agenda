@@ -10,17 +10,11 @@ import api from '../services/api';
 export default {
     name : "Page",
     data() {
-        return{ 
-            addUser : "Adicionar Contato",
-            tag : "Adicionar Contato", 
-            nextView : "AddContact",            
+        return{          
             listUser : [] as User[],          
         }
     },//data
     components :{
-        ButtonUserAdd,
-        ButtonDetails,
-        UserName,
         api
     },//componets
     mounted () { 
@@ -31,8 +25,7 @@ export default {
     }
 </script>
 
-<template >
-   
+<template >   
     <div>
         <div>             
             <a class="subtitle"> Contatos </a>
@@ -41,8 +34,9 @@ export default {
 
         <div class="boxdata" >  
             <div v-for="(nameUser,index) in listUser" :key="index">
-                <UserName :key ="index" :username="nameUser.name"/>
-                <router-link class="addcontact" :to="{name: 'Detail', params: {id: index}}" :id="index"> Detalhes </router-link>             
+                <a> Nome: {{ nameUser.name }} </a>
+                <router-link class="detailcontact" :to="{name: 'Detail', params:{id: nameUser.id}}" :key="index"> Detalhes </router-link>  
+                           
             </div>
         </div>         
     </div>
@@ -59,42 +53,42 @@ export default {
  border-radius: 15px;
 }
 
-.subtitle{  
-    margin-left: 30px;  
-    font-size: 24px;  
-    font-weight: 600;  
-    color: rgb(90, 90, 255);
-}
-
 .routelink{ 
     display: inline-block;
-    background: rgb(90, 90, 255);
     margin-left: 50px;
     margin-bottom: 10px;
-    padding: 5px 30px;
+    padding: 2px 30px;
     border-radius: 30px;
-    font-size: 24px;  
+    font-size: 16px;  
     font-weight: 600;  
-    color: rgb(255, 255, 255);
+    color: rgb(90, 90, 255);
     text-decoration: none;
 }
 
-.addcontact{ 
-    
+.detailcontact{     
     display: inline-block;
-    background: rgb(90, 90, 255);
+    background: rgb(255, 255, 255);
+    margin-left: 30px;
+    margin-bottom: 5px;
+    padding: 2px 30px;
+    border-radius: 30px;
+    font-size: 16px;  
+    font-weight: 600;  
+    border-style: double;
+    border-color: rgb(90,90,255);
+    color: rgb(90, 90, 255);
+    text-decoration: none;
+}
+.subtitle{    
+    font-size: 16px;  
+    font-weight: 600;  
+    color: rgb(255,255,255);
+    background: rgb(90,90,255);
     margin-left: 30px;
     margin-bottom: 5px;
     padding: 5px 30px;
     border-radius: 30px;
     font-size: 16px;  
-    font-weight: 600;  
-    color: rgb(255, 255, 255);
-    text-decoration: none;
-}
-.subtitle{    
-    font-size: 28px;  
-    font-weight: 600;  
-    color: rgb(90, 90, 255);
+    font-weight: 600;     
 }
 </style>
