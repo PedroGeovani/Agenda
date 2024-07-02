@@ -1,6 +1,6 @@
 import api from "./api"
 
-export class DataBaseUsers{
+/*export class DataBaseUsers{
     listUser(){
         api
         .get('/users')
@@ -9,12 +9,12 @@ export class DataBaseUsers{
         } 
     }
 
-    user(id : String){
+    user(ref:String){
         api
-        .delete('/users/'+id)
+        .delete(String.concat('/users/',ref))
         .then(response => (this.listUser = response.data))
         .catch(err => console.log(err))
         } 
     }
 
-}
+}*/

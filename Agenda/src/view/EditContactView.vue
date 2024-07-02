@@ -37,7 +37,7 @@ export default {
 
         <!-- field e data -->
         <div class="boxdata" >  
-            <UserName v-for="item in text" :key ="item" :username="item" :tagbutton="tag"/>        
+                 
         </div>
     </div>             
 </template>

@@ -1,7 +1,8 @@
 <template>
-    <div class="header"> Agenda </div>
-    <router-link to="/"> Contatos </router-link> | 
-    <router-link to="/addContact"> Novo </router-link>
+    <div>
+        <div class="header"> Agenda </div>    
+        <router-link to="/"> Contatos </router-link> 
+    </div>
 </template>
 
 <style scoped>

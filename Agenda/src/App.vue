@@ -1,27 +1,18 @@
-<template>
-  <div class="pagestyle">  
-    <NavBar/>
-    <router-view/>    
-  </div> 
-
-</template>
-
 <script lang="ts">
-import NavBar from './components/navbar/NavBar.vue'
+
+import NavBar from './components/navbar/NavBar.vue';
 
 export default{
-  name : 'App',
-  components:{
+  name : "App",
+  components : { 
     NavBar
-  },  
+  }//components
 }
 </script>
 
+<template>
+  
+   <NavBar/> 
+   <router-view></router-view>
 
-
-<style scoped>
-.pagestyle{
-    background: rgb(220, 230, 255); 
-}
-</style>
-
+</template>

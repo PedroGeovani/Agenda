@@ -6,3 +6,10 @@ export type User = {
     e_mail: string;
     id: string;
 }
+/*
+export class Contact{
+    constructor(
+        public name: String = ""
+    ){}
+}
+*/

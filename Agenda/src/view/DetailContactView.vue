@@ -6,21 +6,27 @@ export default {
     name : "Page",
     data() {
         return{
-            user : {} as User
+            userName : {} as User
         }
     },//data methods: {
+    computed:{
+        /*contact(): Contact {
+            return new Contact();
+        }*/
+    },
     methods:{
+        
         deleteUser(index: String){
             api
             .delete('/users/'+index)
-            .then( () => console.log("Deletado com sucesso!",
-            )
-        )} 
+            .then(() => console.log("saida sem erro"))
+        }
+
     },   
     mounted () { 
         api
         .get('/users/'+this.$route.params.id)
-        .then(response => (this.user = response.data))         
+        .then(response => (this.userName = response.data))         
         },//mounted 
 }
 </script>
@@ -32,18 +38,16 @@ export default {
             <a class="subtitle">Detalhar</a>            
                 <router-link class="routelink" :to="{name:'Contact'}"> Contatos </router-link>
                 <router-link class="routelink" :to="{name:'EditContact'}"> Editar </router-link>
-                <router-link class="routelink" :to="{name:'Contanct'}" :v-bind="deleteUser(user.id)"> Apagar </router-link>
-               
-           
         </div>
-        <!-- field e data -->
-        <div class="boxdata" >
-        <div>Name:     {{ user.name }} </div>     
-        <div>Endereço: {{ user.address }} </div>  
-        <div>Cidade:   {{ user.city }} </div> 
-        <div>Fone:     {{ user.phone }} </div> 
-        <div>Email:    {{ user.e_mail }} </div> 
-        </div>       
+            <!-- field e data -->
+            <div class="boxdata" >
+                <div>Name:     {{ userName.name }} </div>     
+                <div>Endereço: {{ userName.address }} </div>  
+                <div>Cidade:   {{ userName.city }} </div> 
+                <div>Fone:     {{ userName.phone }} </div> 
+                <div>Email:    {{ userName.e_mail }} </div> 
+            </div>                  
+            <button key="name" @click="deleteUser(userName.id)" > Apagar </button>
     </div> 
 </template>
 

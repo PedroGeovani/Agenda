@@ -1,8 +1,4 @@
 <script lang="ts">
-import axios from 'axios';
-import ButtonDetails from '../components/button-details/ButtonDetails.vue';
-import ButtonUserAdd from '../components/buttons/ButtonUserAdd.vue'
-import UserName from '../components/user-name/UserName.vue'
 import { type User } from '../services/type'
 import api from '../services/api';
 
@@ -36,7 +32,6 @@ export default {
             <div v-for="(nameUser,index) in listUser" :key="index">
                 <a> Nome: {{ nameUser.name }} </a>
                 <router-link class="detailcontact" :to="{name: 'Detail', params:{id: nameUser.id}}" :key="index"> Detalhes </router-link>  
-                           
             </div>
         </div>         
     </div>
