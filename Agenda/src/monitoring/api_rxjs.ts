@@ -1,8 +1,13 @@
-import { fromEvent, throttleTime, scan } from 'rxjs';
 
-fromEvent(document, 'click')
-  .pipe(
-    throttleTime(1000),
-    scan((count) => count + 1, 0)
+/*import { ResponseType } from "axios"
+import {Observable , defer, map } from "rxjs"
+const get = <T>(
+  url?:string,
+  adress?:string,
+  object?: Object
+): Observable<T> => {
+  return defer(() =>
+    api(baseURL, token).get<T>(url, { params, responseType })
   )
-  .subscribe((count) => console.log(`Clicked ${count} times`));
+  .pipe(map((result) => result.data));
+}*/

@@ -1,18 +1,22 @@
 <script lang="ts">
 
 import NavBar from './components/navbar/NavBar.vue';
+//import module from './server/server.ts';
 
 export default{
   name : "App",
   components : { 
     NavBar
-  }//components
+  },//components
+  
 }
 </script>
 
 <template>
-  
-   <NavBar/> 
-   <router-view></router-view>
+  <div> 
+    <NavBar/>    
+
+    <router-view></router-view>
+  </div>
 
 </template>

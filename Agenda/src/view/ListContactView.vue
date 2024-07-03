@@ -1,24 +1,19 @@
 <script lang="ts">
-import { type User } from '../services/type'
-import api from '../services/api';
-
+import { type UserTypes } from '../services/type'
+import { DataBaseUsers } from '../services/database'
 
 export default {
     name : "Page",
     data() {
         return{          
-            listUser : [] as User[],          
+            listUser : [] as UserTypes[],          
         }
     },//data
-    components :{
-        api
-    },//componets
-    mounted () { 
-        api
-        .get('/users')
-        .then(response => (this.listUser = response.data))
-        }      
+    mounted() {
+        let database = new DataBaseUsers()
+        this.listUser = database.getUser('/users')
     }
+}
 </script>
 
 <template >   

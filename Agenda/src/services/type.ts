@@ -1,4 +1,4 @@
-export type User = {
+export type UserTypes = {
     name: string;
     address: string;
     city: string;
@@ -6,10 +6,3 @@ export type User = {
     e_mail: string;
     id: string;
 }
-/*
-export class Contact{
-    constructor(
-        public name: String = ""
-    ){}
-}
-*/

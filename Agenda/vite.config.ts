@@ -12,5 +12,15 @@ export default defineConfig({
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url))
     }
+  },
+  server:{
+    proxy:{
+      '/api': {
+          target: 'https://6679b7a718a459f639512c41.mockapi.io/agenda/v1',
+          ws: true,
+          changeOrigin: true,
+        },
+    }
   }
+
 })

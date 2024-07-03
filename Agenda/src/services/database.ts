@@ -1,20 +1,31 @@
-import api from "./api"
+import api from "./api.ts"
+import { type UserTypes  } from "./type.ts"
 
-/*export class DataBaseUsers{
-    listUser(){
+export class DataBaseUsers{    
+
+    ListUser(database:string) : UserTypes[] {
+        let list_data : UserTypes[] = []
         api
-        .get('/users')
-        .then(response => (this.listUser = response.data))
-        .catch(err => console.log(err))
-        } 
+        .get(database)
+        .then(response => (list_data = response.data))
+        .catch(err => console.log("Erro" + list_data));
+        return list_data    
     }
 
-    user(ref:String){
-        api
-        .delete(String.concat('/users/',ref))
-        .then(response => (this.listUser = response.data))
+    getUser(databaseId:string): UserTypes{
+        let item : UserTypes = {} as UserTypes
+         api
+        .get(databaseId)
+        .then(response => (item = response.data))
         .catch(err => console.log(err))
-        } 
+        return item
     }
 
-}*/
+    deleteUser(databaseId:string){
+        api
+        .delete(databaseId)
+        .then(response => console.log("successfully deleted"))
+        .catch(err => console.log(err))        
+    }
+    
+}
