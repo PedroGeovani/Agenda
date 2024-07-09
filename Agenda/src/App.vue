@@ -1,22 +1,17 @@
 <script lang="ts">
 
-import NavBar from './components/navbar/NavBar.vue';
-//import module from './server/server.ts';
-
-export default{
-  name : "App",
-  components : { 
-    NavBar
-  },//components
-  
+import Navigation from '@/components/navigation/Navigation.vue';
+export default {
+  components: {
+    Navigation,
+  }
 }
+
 </script>
 
 <template>
-  <div> 
-    <NavBar/>    
-
-    <router-view></router-view>
+  <div>
+    <Navigation />
+    <router-view> </router-view>
   </div>
-
 </template>
