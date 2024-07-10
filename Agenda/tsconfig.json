@@ -6,6 +6,12 @@
     },
     {
       "path": "./tsconfig.app.json"
+<<<<<<< HEAD
+=======
+    },
+    {
+      "path": "./tsconfig.vitest.json"
+>>>>>>> feature/principal
     }
   ]
 }

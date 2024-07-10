@@ -1,5 +1,6 @@
 <script lang="ts">
 
+<<<<<<< HEAD
 import ButtonUserAdd from './components/buttons/ButtonUserAdd.vue'
 import LayoutPage from './components/LayoutPage.vue'
 
@@ -52,3 +53,20 @@ export default{
 <style scoped>
 
 </style>
+=======
+import Navigation from '@/components/navigation/Navigation.vue';
+export default {
+  components: {
+    Navigation,
+  }
+}
+
+</script>
+
+<template>
+  <div>
+    <Navigation />
+    <router-view> </router-view>
+  </div>
+</template>
+>>>>>>> feature/principal
